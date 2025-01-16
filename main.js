@@ -8,6 +8,7 @@ const audioPlayer = document.getElementById('audioPlayer');
 const playButton = document.getElementById('play');
 const speedSelect = document.getElementById('speed');
 const speedValue = document.getElementById('speedValue');
+const trackNumber = document.getElementById('trackNumber');
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -29,6 +30,7 @@ function playNext() {
     audioPlayer.src = nextFile;
     audioPlayer.play();
     audioPlayer.playbackRate = parseFloat(speedSelect.value);
+    trackNumber.textContent = `${playedFiles.length}首目`; // ここを変更
 }
 
 playButton.addEventListener('click', () => {
